@@ -97,13 +97,15 @@ on post-fs-data
     chmod 0644 /dev/freezer/frozen/tasks
     chmod 0644 /dev/freezer/frozen/cgroup.procs
     chmod 0644 /dev/freezer/frozen/freezer.state
-
 # Samsung Pay
-    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
+    #mkdir -m 0760 -p /efs/pfw_data
+    #chown vendor_spay:vendor_spay /efs/pfw_data
 
 # MST/NFC Switch
-    chown vendor_spay system /dev/mst_ctrl
-    chmod 0660 /dev/mst_ctrl
+    #chown vendor_spay:system /dev/mst_ctrl
+    #chmod 0660 /dev/mst_ctrl
+
+
 
 # ADSP
     mkdir /data/vendor 0771 root system
